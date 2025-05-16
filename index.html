@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop Sales Analysis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="text-center my-4">
+            <h1 class="display-4">Pet Shop Sales Analysis</h1>
+            <p class="lead text-muted">Comprehensive analysis of sales data to help make informed business decisions</p>
+        </header>
+
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Filter Data</h5>
+                        <div class="mb-3">
+                            <label for="time-period" class="form-label">Select Time Period:</label>
+                            <select id="time-period" class="form-select">
+                                <option value="30D">Last 30 Days</option>
+                                <option value="90D">Last 90 Days</option>
+                                <option value="6M">Last 6 Months</option>
+                                <option value="1Y">Last Year</option>
+                                <option value="ALL" selected>All Time</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Select Categories:</label>
+                            <div id="category-checkboxes">
+                                <!-- Categories will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        <button id="apply-filters" class="btn btn-primary w-100">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card metric-card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Total Revenue</h5>
+                                <h3 id="total-revenue" class="text-primary">$0.00</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card metric-card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Total Transactions</h5>
+                                <h3 id="total-transactions" class="text-primary">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card metric-card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Avg. Basket Size</h5>
+                                <h3 id="avg-basket-size" class="text-primary">$0.00</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Revenue Over Time</h5>
+                        <div class="chart-container">
+                            <canvas id="revenue-time-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sales by Category</h5>
+                        <div class="chart-container">
+                            <canvas id="category-sales-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Top 10 Best-Selling Products</h5>
+                        <div class="chart-container">
+                            <canvas id="top-products-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Seasonal Trends</h5>
+                        <div class="chart-container">
+                            <canvas id="seasonal-trends-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weekly Sales Pattern</h5>
+                        <div class="chart-container">
+                            <canvas id="weekly-pattern-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Customer Purchasing Frequency</h5>
+                        <div class="chart-container">
+                            <canvas id="customer-frequency-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Business Insights & Recommendations</h5>
+                        <div id="insights-container" class="mt-3">
+                            <!-- Insights will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center text-muted my-4">
+            <p>Pet Shop Sales Analysis Dashboard © 2025</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

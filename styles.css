@@ -1,0 +1,70 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: none;
+}
+
+.metric-card {
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.card-title {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.text-primary {
+    color: #0d6efd !important;
+}
+
+.category-checkbox {
+    margin-bottom: 8px;
+}
+
+#insights-container {
+    line-height: 1.6;
+}
+
+.insight-section {
+    margin-bottom: 20px;
+}
+
+.insight-title {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.recommendation {
+    background-color: #f1f8ff;
+    border-left: 4px solid #0d6efd;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 250px;
+    }
+}
